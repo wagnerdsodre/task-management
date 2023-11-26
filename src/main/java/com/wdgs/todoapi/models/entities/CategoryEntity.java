@@ -10,8 +10,10 @@ import jakarta.persistence.Index;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity(name = "category")
@@ -28,5 +30,7 @@ public class CategoryEntity extends Base {
 
   @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
   private List<CheckListItemEntity> checkListItens;
+
+  private Boolean active = true;
 
 }
