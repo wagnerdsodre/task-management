@@ -19,18 +19,23 @@ public class CheckListItemEntity extends Base{
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Long CheckListItemId;
 
   private String description;
 
   private Boolean isCompleted;
 
+  private Boolean Active = true;
+
   private LocalDate finalLimit;
 
-  private LocalDate createdAt;
+  private LocalDate createdAt = LocalDate.now();
 
   @ManyToOne
   private CategoryEntity category;
 
 
+  public void setDesActive() {
+    this.setActive(false);
+  }
 }

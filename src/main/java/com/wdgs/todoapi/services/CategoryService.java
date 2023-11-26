@@ -22,7 +22,7 @@ public class CategoryService {
     this.checkListRepository = checkListRepository;
   }
 
-  private static void ifExistGuidOrName(String guid) {
+  private static void ifExistGuid(String guid) {
     if (guid == null) {
       throw new IllegalArgumentException(
           "Invalid parameters cause: guid cannot be null and name be empty");
@@ -45,7 +45,7 @@ public class CategoryService {
   }
 
   public CategoryEntity updateCategory(String guid, String name) {
-    ifExistGuidOrName(name);
+    ifExistGuid(name);
     CategoryEntity updateCategory = this.categoryRepository.findByGuid(guid)
         .orElseThrow(() -> new ResourceNotFoundException("Resource Not found"));
 
@@ -56,7 +56,7 @@ public class CategoryService {
   }
 
   public void DeleteCategory(String guid) {
-    ifExistGuidOrName(guid);
+    ifExistGuid(guid);
     CategoryEntity deleteCategory = this.categoryRepository.findByGuid(guid)
         .orElseThrow(() -> new ResourceNotFoundException("Resource Not found"));
     deleteCategory.setActive(false);
@@ -64,7 +64,7 @@ public class CategoryService {
   }
 
   public CategoryEntity findByGuid(String guid) {
-    ifExistGuidOrName(guid);
+    ifExistGuid(guid);
     return this.categoryRepository.findByGuid(guid)
         .orElseThrow(() -> new ResourceNotFoundException("Resource Not found"));
 
