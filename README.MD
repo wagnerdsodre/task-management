@@ -7,7 +7,7 @@ estarão disponíveis no Trello. Outras funcionalidades podem ser incluídas nes
 
 ## ⚙️ Funcionalidades
 
-- [x] Gestão completa do atividades;
+- [x] Gestão completa de atividades;
 
 --**-**
 
