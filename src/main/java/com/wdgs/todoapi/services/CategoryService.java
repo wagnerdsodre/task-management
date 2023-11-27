@@ -51,7 +51,8 @@ public class CategoryService {
 
     updateCategory.setName(name);
     log.debug("This category was updated with[guid={} , name={}]", guid, name);
-    return categoryRepository.save(updateCategory);
+    categoryRepository.save(updateCategory);
+    return updateCategory;
 
   }
 

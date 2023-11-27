@@ -96,7 +96,7 @@ public class CheckListServices {
     if (isCompleted != null) {
       checkListItem.setIsCompleted(isCompleted);
     }
-    if (isCompleted != null) {
+    if (finalLimit != null) {
       checkListItem.setFinalLimit(finalLimit);
     }
 

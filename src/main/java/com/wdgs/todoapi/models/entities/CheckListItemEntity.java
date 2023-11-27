@@ -29,7 +29,7 @@ public class CheckListItemEntity extends Base{
 
   private LocalDate finalLimit;
 
-  private LocalDate createdAt = LocalDate.now();
+  private LocalDate postDate;
 
   @ManyToOne
   private CategoryEntity category;
